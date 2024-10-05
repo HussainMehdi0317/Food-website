@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .food-card {
+        padding: 15px 0px;
+        width: 300px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        text-align: center;
+        margin: 20px auto;
+        font-family: "Arial", sans-serif;
+      }
+      .text {
+        position: relative;
+      }
+      .card-header {
+        padding: 10px 0;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .card-image {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      .card-image img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .card-content h3 {
+        font-size: 1.4rem;
+        margin: 10px 0;
+        color: #000;
+      }
+
+      .card-content p {
+        font-size: 0.9rem;
+        color: #333;
+        line-height: 1.4;
+      }
+      .btn button {
+        border: none;
+        cursor: pointer;
+        background-color: grey;
+        padding: 10px 25px;
+        border-radius: 20px;
+      }
+      .btn a {
+        text-decoration: none;
+        color: white;
+      }
+      .btn button {
+        transition: linear 0.15s;
+      }
+      .btn button:hover {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="food-card">
+      <div class="text">
+        <div class="card-header">
+          <h4>AMERICAN CUISINE</h4>
+        </div>
+        <div class="card-image">
+          <img src="1-Card.jpeg" alt="Beef Steak" />
+        </div>
+        <div class="card-content">
+          <h3>Beef Steak</h3>
+          <p>
+            Beef steak is the epitome of hearty indulgence—perfectly seared on
+            the outside, tender and juicy on the inside. Each bite is a
+            celebration of rich, savory flavors that satisfy the deepest
+            cravings, making it a timeless favorite across cultures and
+            cuisines.
+          </p>
+        </div>
+      </div>
+      <div class="btn">
+        <button><a href="#">Click for more</a></button>
+      </div>
+    </div>
+  </body>
+</html>

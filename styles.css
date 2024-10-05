@@ -1,0 +1,595 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --green: #5bbd38;
+}
+
+body {
+  background-color: black;
+}
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: var(--green);
+  border: 3px solid #000;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) #000;
+  overflow-x: hidden;
+}
+#navbar.scroll-black .option a {
+  color: black;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  margin: 15px 110px;
+}
+
+.option ul {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+/* Navbar Links */
+
+.option a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--green); /* Green underline */
+  transition: width 0.4s ease; /* Controls the speed of the sliding animation */
+}
+.option a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  cursor: pointer;
+  font-size: 1.25em;
+  transition: color 0.3s ease;
+}
+
+.option a:hover::after {
+  width: 100%; /* Expands the underline on hover */
+}
+
+/* Default Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  margin: 15px 110px;
+  transition: border-bottom-color 0.3s ease, color 0.3s ease;
+}
+.login img.account-logo {
+  filter: invert(100%);
+  transition: filter 0.3s;
+}
+
+/* Scroll state - Applied when scrolled to the second section */
+.scroll-black .navbar {
+  border-bottom-color: black !important; /* Ensure border color changes */
+}
+
+.scroll-black .option a {
+  color: black; /* Text color on the second page */
+}
+
+/* Hover state for second page - added separately */
+
+.scroll-black #login img.account-logo {
+  filter: invert(0%); /* Black logo */
+}
+
+nav {
+  padding: 0px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  margin: 15px 110px;
+  transition: border-bottom-color 0.3s ease, color 0.3s ease;
+}
+.logo img {
+  width: 150px;
+  cursor: pointer;
+}
+
+.option ul {
+  cursor: pointer;
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.option a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.25em;
+}
+#login {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#login button {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 3px solid var(--green);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 30px;
+  background: transparent;
+  color: white;
+}
+#login button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--green);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+#login a {
+  text-decoration: none;
+  color: white;
+}
+#login button:hover {
+  color: #fff;
+}
+
+#login button:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+#login button:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+#login button:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+}
+.scroll-black #login-btn a {
+  color: #000;
+}
+.scroll-black #sign-up-btn a {
+  color: #000;
+}
+
+#login img {
+  cursor: pointer;
+  width: 70px;
+  filter: invert(100%);
+  transition: 0.3s;
+}
+
+.image-container {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+.food-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 0px;
+  opacity: 0.6;
+  overflow: hidden;
+  height: 100%;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.home .input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.2rem;
+  gap: 5px;
+  padding: 0px 20px;
+}
+
+.home .input .input_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 15px;
+  border-radius: 40px;
+  padding: 0 15px;
+  font-family: "Poppins", sans-serif;
+  background: rgba(220, 220, 220, 0.336);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.3px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.home .input .input_box i {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.home .input .input_box input {
+  color: white;
+  height: 70%;
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-left: 1px white solid;
+  width: 300px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+
+.home .input .input_box input::placeholder {
+  color: rgba(255, 255, 255, 0.712);
+}
+
+button {
+  font-size: 17px;
+  padding: 0.8em 2.1em;
+  font-weight: 500;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  cursor: pointer;
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.3px);
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0.6em;
+  margin-top: -0.25em;
+}
+
+.label {
+  position: relative;
+  top: -1px;
+}
+
+.transition {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 500ms;
+  background-color: var(--green);
+  border-radius: 9999px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button:hover .transition {
+  width: 14em;
+  height: 14em;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.search-icon ul {
+  list-style: none;
+  position: relative;
+  top: 2px;
+}
+
+section {
+  position: absolute;
+  top: 117%;
+}
+section img {
+  width: 100vw;
+}
+/* Down Arrow Styling */
+.down-arrow {
+  position: relative;
+  top: 330px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.down-arrow:hover {
+  transform: translateY(10px); /* Animation effect on hover */
+}
+/* Back to Top Button Styling */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* Show the button when scrolled */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* card */
+/* Card Slider Container */
+.card-slider {
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column; 
+}
+
+/* Container for Cards */
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Individual Food Cards */
+.food-card {
+  flex: 0 0 calc(33.33% - 20px); /* Show 3 cards at a time */
+  padding: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 8px 10px rgba(26, 26, 26, 0.9);
+  overflow: hidden;
+  text-align: center;
+  margin: 10px; /* Center cards */
+  height: 80vh;
+  align-content: space-around;
+}
+
+/* Card Text, Images, and Buttons */
+.text {
+  position: relative;
+}
+
+.card-header {
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 10px 0;
+  
+}
+
+.card-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  color: #000;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.btn button {
+  border: none;
+  cursor: pointer;
+  background-color: grey;
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn button {
+  transition: linear 0.15s;
+}
+
+.btn button:hover {
+  background-color: black;
+}
+
+/* Arrow Button Styling */
+.slide-arrow {
+  position: absolute;
+  bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.left-arrow {
+  left: 20px; /* Left Arrow */
+  bottom: 50%;
+}
+
+.right-arrow {
+  right: 20px; /* Right Arrow */
+  bottom: 50%;
+}
+
+/* Style for arrows */
+.slide-arrow:hover {
+  transform: scale(1.1);
+}
+
+/* Full Screen Adjustment for Cards */
+#second-page {
+  height: calc(115vh - 60px); /* Adjusting to fill below the navbar */
+  display: flex;
+  align-items: center; /* Center align vertically */
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    margin: 10px auto;
+    padding: 0 10px;
+  }
+
+  .option ul {
+    gap: 20px;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .login button {
+    font-size: 1em;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .option ul {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .home .input .input_box input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 80px;
+  }
+
+  .option ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .home .input {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .home .input .input_box {
+    padding: 0 10px;
+  }
+
+  .home .input .input_box input {
+    width: 180px;
+  }
+
+  .home .input button {
+    padding: 5px 15px;
+  }
+}
+
+
